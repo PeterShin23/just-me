@@ -34,7 +34,7 @@ const tagVariants = {
 const Hero = () => {
   return (
     <section className="flex flex-col md:flex-row justify-between items-center gap-12 min-h-screen">
-      <div className="flex-1 space-y-6 pl-24">
+      <div className="flex-1 space-y-6 px-16 md:pl-24">
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -106,7 +106,7 @@ const Hero = () => {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
-        className="flex-1 flex flex-col items-center gap-4"
+        className="flex-1 flex flex-col items-center gap-4 md:mr-8 lg:mr-16"
       >
         <Image
           src="/pfp.jpg"
