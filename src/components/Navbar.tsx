@@ -5,8 +5,8 @@ import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 
 const navItems = [
-  { label: 'Home', href: '/' },
-  { label: 'Projects', href: '/projects' },
+  { label: 'About', href: '/' },
+  { label: 'Experiences', href: '#experiences' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -15,7 +15,7 @@ export default function Navbar() {
 
   return (
     <nav className="w-full flex justify-between items-center py-4 px-6 border-b bg-white fixed top-0 z-50 shadow-sm">
-      <div className="text-lg font-bold">MyPortfolio</div>
+      <div className="text-lg font-bold text-black">I am Peter.</div>
       <ul className="flex gap-6">
         {navItems.map(({ label, href }) => (
           <li key={href}>
