@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ParallaxBackground from "@/components/ParallaxBackground";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,8 +26,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <body className="antialiased bg-white text-gray-900">
+        <ParallaxBackground />
         <Navbar />
-        <main>{children}</main>
+        <main className="relative" style={{ zIndex: 1 }}>{children}</main>
         <Footer />
       </body>
     </html>
