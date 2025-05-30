@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { FaInstagram, FaLinkedin, FaEnvelope } from 'react-icons/fa'
+import { FaLinkedin, FaEnvelope } from 'react-icons/fa'
 import { FiDownload } from 'react-icons/fi'
 
 const tags = ['Software Engineer', 'Full Stack Engineer', 'AI Engineer', 'Amazon Web Services', 'CoStar Group', 'Founder', 'UVA', 'Photographer - kinda sorta', 'Korean Immigrant', 'Proud Son']
@@ -41,7 +41,7 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           className="text-4xl font-bold"
         >
-          <p>Hi, I'm Peter.</p>
+          <p>{"Hi, I'm Peter."}</p>
           <br />
           <p className="text-lg">BS in Computer Science. 2 YOE.</p>
           <p className="text-lg">Learning Everday. Blessed Always.</p>
