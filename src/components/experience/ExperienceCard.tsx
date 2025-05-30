@@ -29,7 +29,8 @@ export default function ExperienceCard({
   }
 
   return (
-    <Tilt className="w-full sm:w-[300px]">
+    <div className="flex w-full justify-center">
+    <Tilt className="flex justify-center w-11/12 sm:w-[300px]">
       <motion.div
         ref={cardRef}
         onMouseMove={handleMouseMove}
@@ -53,5 +54,7 @@ export default function ExperienceCard({
         <div className="pointer-events-none absolute inset-0 z-[-1] bg-[radial-gradient(circle_at_var(--mouse-x,_var(--mouse-y)),_rgba(99,102,241,0.25),_transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </motion.div>
     </Tilt>
+    </div>
+
   )
 }
