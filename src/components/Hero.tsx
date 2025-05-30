@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { FaLinkedin, FaEnvelope } from 'react-icons/fa'
 import { FiDownload } from 'react-icons/fi'
 
-const tags = ['Software Engineer', 'Full Stack Engineer', 'AI Engineer', 'Amazon Web Services', 'CoStar Group', 'Founder', 'UVA', 'Photographer - kinda sorta', 'Korean Immigrant', 'Proud Son']
+const tags = ['Software Engineer', 'Full Stack Engineer', 'AI Engineer', 'Amazon Web Services', 'CoStar Group', 'UVA Alumni', 'Founder', 'Photographer - kinda sorta', 'Korean Immigrant', 'Proud Son']
 
 const tagVariants = {
   hidden: { opacity: 0, y: 12, scale: 0.95 },
@@ -49,6 +49,9 @@ const Hero = () => {
 
         <motion.div
           className="flex flex-wrap gap-2"
+          style={{
+            maxWidth: "550px"
+          }}
           initial="hidden"
           animate="visible"
           variants={{
