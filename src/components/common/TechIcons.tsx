@@ -33,6 +33,7 @@ export const TechIcons = {
 }
 
 type IconWrapperProps = {
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   Icon: React.ComponentType<any>; // bypasses strict typing on devicons-react
   size?: number;
   color?: string;
