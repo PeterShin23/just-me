@@ -63,7 +63,9 @@ export default function Experience() {
   }, [selected])
 
   return (
-    <section className="my-8 relative z-10 px-6 sm:px-12 lg:px-24">
+    <section 
+      id="experiences"
+      className="py-20 relative z-10 px-6 sm:px-12 lg:px-24">
       <motion.h2
         className="text-3xl font-bold text-center mb-12"
         initial={{ opacity: 0, y: 30 }}

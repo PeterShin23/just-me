@@ -85,7 +85,9 @@ export default function ContactPage() {
 };
 
   return (
-    <section className="py-20 px-6 sm:px-12 text-black dark:text-white">
+    <section 
+      id="contact"
+      className="py-20 px-6 sm:px-12 text-black dark:text-white">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -133,7 +135,7 @@ export default function ContactPage() {
             />
           </div>
 
-          <div className="flex gap-x-4">
+          <div className="flex gap-x-4 justify-center flex-wrap gap-y-4">
             <motion.button
               type="submit"
               disabled={isSending}

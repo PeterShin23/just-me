@@ -1,26 +1,26 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 import { useEffect, useState } from 'react'
+import { useActiveSection } from '@/hooks/useActiveSection' // ⬅️ add this
 
 const navItems = [
-  { label: 'about.', href: '/' },
-  { label: 'experiences.', href: '#experiences' },
-  { label: 'contact.', href: '/contact' },
+  { label: 'about.', href: '#about', id: 'about' },
+  { label: 'work life.', href: '#experiences', id: 'experiences' },
+  { label: 'contact.', href: '#contact', id: 'contact' },
 ]
 
 export default function Navbar() {
-  const pathname = usePathname()
   const [prevScroll, setPrevScroll] = useState(0)
   const [hidden, setHidden] = useState(false)
+  const activeId = useActiveSection(navItems.map(item => item.id)) // ⬅️ track visible section
 
   useEffect(() => {
     const handleScroll = () => {
-      const current = window.scrollY;
-      setHidden(current > 200 && current > prevScroll);
-      setPrevScroll(current);
+      const current = window.scrollY
+      setHidden(current > 200 && current > prevScroll)
+      setPrevScroll(current)
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -38,13 +38,13 @@ export default function Navbar() {
     >
       <div className="text-lg font-bold text-black">i am Peter.</div>
       <ul className="flex gap-6">
-        {navItems.map(({ label, href }) => (
+        {navItems.map(({ label, href, id }) => (
           <li key={href}>
             <Link
               href={href}
               className={clsx(
                 'transition-colors duration-200 hover:text-indigo-600',
-                pathname === href ? 'text-indigo-600 font-semibold' : 'text-gray-700'
+                activeId === id ? 'text-indigo-600 font-semibold' : 'text-gray-700'
               )}
             >
               {label}
