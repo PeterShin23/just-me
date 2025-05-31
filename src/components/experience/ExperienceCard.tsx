@@ -5,6 +5,7 @@ import Tilt from '@/components/common/TiltWrapper'
 import { useRef } from 'react'
 
 type ExperienceCardProps = {
+  id: string
   title: string
   company: string
   date: string
@@ -12,6 +13,7 @@ type ExperienceCardProps = {
 }
 
 export default function ExperienceCard({
+  // id,
   title,
   company,
   date,
@@ -33,8 +35,9 @@ export default function ExperienceCard({
     <Tilt className="flex justify-center w-11/12 sm:w-[300px]">
       <motion.div
         ref={cardRef}
+        // layoutId={`card-${id}`}
         onMouseMove={handleMouseMove}
-        className="relative bg-white group rounded-xl p-5 border border-gray-200 shadow-md hover:shadow-xl transition duration-300 overflow-hidden"
+        className="relative bg-white/90 backdrop-blur-sm group rounded-xl p-5 border border-gray-200 shadow-md hover:shadow-xl transition duration-300 overflow-hidden"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{

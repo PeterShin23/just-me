@@ -86,7 +86,7 @@ export default function Experience() {
   return (
     <section 
       id="experiences"
-      className="py-20 relative z-20 px-6 sm:px-12 lg:px-24">
+      className="pb-20 pt-10 relative z-20 px-6 sm:px-12 lg:px-24">
       <motion.h2
         className="text-3xl font-bold text-center mb-12"
         initial={{ opacity: 0, y: 30 }}
@@ -144,10 +144,10 @@ export default function Experience() {
         ))}
       </motion.div>
 
-      <AnimatePresence mode="sync">
+      <AnimatePresence mode="wait">
         {selectedExperience && (
           <motion.div
-            key="expanded-card"
+            key={`expanded-${selectedExperience.id}`}
             layoutId={`card-${selectedExperience.id}`}
             ref={detailRef}
             className="fixed top-24 left-0 right-0 mx-auto w-[90%] md:w-3/4 lg:w-2/3 bg-white rounded-xl shadow-xl p-6 flex flex-col md:flex-row gap-6 z-10"

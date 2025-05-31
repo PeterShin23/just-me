@@ -7,41 +7,28 @@ import ProjectCard from "./ProjectCard"
 const projects = [
   {
     id: 'project-1',
-    title: 'Mindria AI',
-    description: 'A local-first knowledge graph assistant that helps me think and remember better.',
-    tags: ['AI', 'Graph', 'Neo4j', 'Next.js'],
-    liveUrl: 'https://mindria.ai',
-    repoUrl: 'https://github.com/pshin23/mindria-ai',
+    title: 'Mindria AI - Founder',
+    description: 'Retrival Verification Platform for LLM-Driven Applications. Brings verifiability and auditability in LLM workflows in a docker-ready container for private instances. Provides backend API, background jobs, SDK, Dashboard UI.',
+    tags: ['StartUp', 'AI', 'RAG', 'LLM', 'Observability', 'Python', 'NextJS'],
+    repoUrl: 'https://github.com/mindria-ai',
+    customTitleStyle: "animated-gradient"
   },
   {
     id: 'project-2',
-    title: 'Vision Chef',
-    description: 'Scan ingredients with your camera and get personalized recipes using OpenAI.',
-    tags: ['React Native', 'YOLOv8', 'OpenAI'],
-    repoUrl: 'https://github.com/pshin23/vision-chef',
+    title: 'No Meal Plan',
+    finishedDate: 'April 2025',
+    description: 'Scan ingredients with your camera and get personalized recipes using OpenAI. Trained ML model using YOLOv8 and public computer vision ready datasets. Stores to locally hosted DB to track recipes and scores.',
+    tags: ['ReactNative', 'YOLOv8', 'OpenAI', 'Python', 'FastAPI'],
+    repoUrl: 'https://github.com/PeterShin23/food-vision',
   },
   {
     id: 'project-3',
-    title: 'Vision Chef 2',
-    description: 'Scan ingredients with your camera and get personalized recipes using OpenAI.',
-    tags: ['React Native', 'YOLOv8', 'OpenAI'],
-    repoUrl: 'https://github.com/pshin23/vision-chef',
+    title: 'Instagram Portfolio ✨',
+    finishedDate: 'December 2024 - loading...',
+    description: "Creates a personalized photography portfolio using an Instagram user's media. Previously serviced 12 paying users. Working on refactoring to allow more customizability and Stripe integrations.",
+    tags: ['React', 'Python', 'DynamoDB', 'S3', 'APIGateway', 'Go', 'Meta'],
+    liveUrl: 'https://tinyurl.com/yf6hvufm',
   },
-  {
-    id: 'project-4',
-    title: 'Vision Chef 2',
-    description: 'Scan ingredients with your camera and get personalized recipes using OpenAI.',
-    tags: ['React Native', 'YOLOv8', 'OpenAI'],
-    repoUrl: 'https://github.com/pshin23/vision-chef',
-  },
-  {
-    id: 'project-5',
-    title: 'Vision Chef 2',
-    description: 'Scan ingredients with your camera and get personalized recipes using OpenAI.',
-    tags: ['React Native', 'YOLOv8', 'OpenAI'],
-    repoUrl: 'https://github.com/pshin23/vision-chef',
-  },
-  // more projects...
 ]
 
 export default function Project() {

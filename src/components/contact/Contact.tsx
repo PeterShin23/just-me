@@ -153,7 +153,7 @@ export default function ContactPage() {
             <motion.button
               type="submit"
               disabled={isSending}
-              className={`${buttonBase} text-white`}
+              className={`${buttonBase} text-white cursor-pointer`}
               style={{ backgroundColor: "#d97706" }}
               {...sharedMotionProps}
             >
@@ -163,7 +163,8 @@ export default function ContactPage() {
 
             <motion.button
               type="button"
-              className={`${buttonBase} text-white`}
+              onClick={() => window.open("https://linkedin.com/in/petershin23")}
+              className={`${buttonBase} text-white cursor-pointer`}
               style={{ backgroundColor: '#0077B5' }}
               {...sharedMotionProps}
             >
@@ -173,7 +174,8 @@ export default function ContactPage() {
 
             <motion.button
               type="button"
-              className={`${buttonBase} text-white`}
+              onClick={() => window.open("https://instagram.com/peter.shin")}
+              className={`${buttonBase} text-white cursor-pointer`}
               style={{ backgroundColor: '#E1306C' }}
               {...sharedMotionProps}
             >

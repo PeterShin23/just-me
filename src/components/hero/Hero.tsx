@@ -11,19 +11,19 @@ import { CurrentStatus } from './CurrentStatus'
 const buttons = [
   {
     icon: <FiPaperclip />,
-    label: 'resume',
+    label: 'resume.',
     href: '/resume.pdf',
     color: 'bg-orange-500',
   },
   {
     icon: <FaLinkedin />,
-    label: 'linkedin',
+    label: 'linkedin.',
     href: 'https://linkedin.com/in/petershin23',
     color: 'bg-blue-600',
   },
   {
     icon: <FaInstagram />,
-    label: 'instagram',
+    label: 'instagram.',
     href: 'https://instagram.com/peter.shin',
     color: 'bg-pink-600',
   },

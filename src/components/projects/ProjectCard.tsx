@@ -8,11 +8,13 @@ type Project = {
   title: string
   description: string
   tags: string[]
+  finishedDate?: string;
   liveUrl?: string
   repoUrl?: string
+  customTitleStyle?: string;
 }
 
-export default function ProjectCard({ title, description, tags, liveUrl, repoUrl }: Project) {
+export default function ProjectCard({ title, description, tags, liveUrl, repoUrl, finishedDate, customTitleStyle }: Project) {
   return (
     <motion.div
       className="w-full sm:w-[320px]"
@@ -22,8 +24,9 @@ export default function ProjectCard({ title, description, tags, liveUrl, repoUrl
       transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
     >
       <TiltWrapper>
-        <div className="relative group bg-slate-700/50 backdrop-blur-md border border-white/20 rounded-2xl p-6 text-white shadow-md hover:shadow-xl transition duration-300 space-y-4">
-          <div className="text-xl font-bold">{title}</div>
+        <div className="relative select-none group bg-slate-700/50 backdrop-blur-md border border-white/20 rounded-2xl p-6 text-white shadow-md hover:shadow-xl transition duration-300 space-y-4">
+        <div className="text-xs text-gray-200">{finishedDate ?? "loading..."}</div>
+          <div className={`text-xl font-bold ${customTitleStyle}`}>{title}</div>
           <p className="text-sm text-gray-200">{description}</p>
 
           <div className="flex flex-wrap gap-2">
