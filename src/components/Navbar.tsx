@@ -6,9 +6,9 @@ import clsx from 'clsx'
 import { useEffect, useState } from 'react'
 
 const navItems = [
-  { label: 'about', href: '/' },
-  { label: 'experiences', href: '#experiences' },
-  { label: 'contact', href: '/contact' },
+  { label: 'about.', href: '/' },
+  { label: 'experiences.', href: '#experiences' },
+  { label: 'contact.', href: '/contact' },
 ]
 
 export default function Navbar() {

@@ -22,7 +22,7 @@ export const CurrentStatus = () => {
   }, [])
 
   return (
-    <p className="text-lg sm:text-xl font-semibold leading-snug text-balance">
+    <p className="text-base sm:text-lg font-semibold leading-snug text-balance">
       <span className="text-gray-400 dark:text-gray-500">i am </span>
       <motion.span
         initial={{ opacity: 0 }}
