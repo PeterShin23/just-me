@@ -94,8 +94,22 @@ export default function ContactPage() {
         transition={{ duration: 0.5 }}
         className="max-w-2xl mx-auto"
       >
-        <h1 className="text-4xl font-bold mb-8">roast me or connect with me.</h1>
-        <form onSubmit={handleSubmit} className="space-y-6">
+      <motion.h1
+        className="text-4xl font-bold mb-8"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.6 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+      >
+        roast me or connect with me.
+      </motion.h1>
+        <motion.form 
+          onSubmit={handleSubmit} 
+          className="space-y-6"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}>
           <div>
             <label htmlFor="name" className="block text-sm font-medium mb-1">name</label>
             <input
@@ -167,7 +181,7 @@ export default function ContactPage() {
               <FaInstagram className="size-5" />
             </motion.button>
           </div>
-        </form>
+        </motion.form>
       </motion.div>
     </section>
   )

@@ -72,7 +72,7 @@ const Hero = () => {
             {/* Background morphing container */}
             <div
               className={clsx(
-                'absolute rounded-full transition-all duration-500 ease-out pointer-events-none',
+                'absolute rounded-3xl transition-all duration-500 ease-out pointer-events-none',
                 activeIndex !== null 
                   ? `${buttons[activeIndex].color} shadow-lg`
                   : 'bg-transparent'
@@ -150,7 +150,7 @@ const Hero = () => {
                   {/* Button content */}
                   <div
                     className={clsx(
-                      'absolute flex items-center h-full rounded-full transition-all duration-500 ease-out pointer-events-none',
+                      'absolute flex items-center h-full rounded-xl transition-all duration-500 ease-out pointer-events-none',
                       isActive ? 'text-white justify-start pl-4' : 'text-gray-700 justify-center'
                     )}
                     style={{
