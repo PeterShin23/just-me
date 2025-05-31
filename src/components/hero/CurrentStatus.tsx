@@ -12,7 +12,7 @@ const statuses = [
 ]
 
 export const CurrentStatus = () => {
-  const [_, setIndex] = useState(0)
+  const [, setIndex] = useState(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
