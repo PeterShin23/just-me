@@ -63,7 +63,7 @@ export default function Experience() {
   }, [selected])
 
   return (
-    <section className="my-8 relative z-10">
+    <section className="my-8 relative z-10 px-6 sm:px-12 lg:px-24">
       <motion.h2
         className="text-3xl font-bold text-center mb-12"
         initial={{ opacity: 0, y: 30 }}
@@ -71,7 +71,7 @@ export default function Experience() {
         viewport={{ once: true, amount: 0.6 }}
         transition={{ duration: 0.7, ease: 'easeOut' }}
       >
-        Experience
+        experiences.
       </motion.h2>
 
       <motion.div
@@ -92,7 +92,8 @@ export default function Experience() {
           },
         }}
       >
-        {experiences.map((exp) => (
+        {experiences
+          .map((exp) => (
           <motion.div
             key={exp.id}
             layout
@@ -123,8 +124,9 @@ export default function Experience() {
       <AnimatePresence mode="sync">
         {selectedExperience && (
           <motion.div
-            ref={detailRef}
+            key="expanded-card"
             layoutId={`card-${selectedExperience.id}`}
+            ref={detailRef}
             className="fixed top-24 left-0 right-0 mx-auto w-[90%] md:w-3/4 lg:w-2/3 bg-white rounded-xl shadow-xl p-6 z-50 flex flex-col md:flex-row gap-6"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -133,21 +135,20 @@ export default function Experience() {
           >
             <div className="flex-1">
               <h3 className="text-xl font-bold text-indigo-600">{selectedExperience.title}</h3>
-              <p className="text-sm text-gray-500">{selectedExperience.company} &bull; {selectedExperience.date}</p>
-              <div className="mt-4">
-                <p className="text-sm text-gray-700 leading-relaxed">
-                  <Typewriter
-                    words={[selectedExperience.details]}
-                    typeSpeed={25}
-                    deleteSpeed={0}
-                    delaySpeed={1000000}
-                    cursor
-                    cursorStyle="_"
-                  />
-                </p>
+              <p className="text-sm text-gray-500">
+                {selectedExperience.company} &bull; {selectedExperience.date}
+              </p>
+              <div className="mt-4 text-sm text-gray-700 leading-relaxed">
+                <Typewriter
+                  words={[selectedExperience.details]}
+                  typeSpeed={25}
+                  deleteSpeed={0}
+                  delaySpeed={1000000}
+                  cursor
+                  cursorStyle="_"
+                />
               </div>
             </div>
-
             <button
               onClick={() => setSelected(null)}
               className="absolute top-4 right-4 text-gray-400 hover:text-black transition text-xl"

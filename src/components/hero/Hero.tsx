@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { FaLinkedin, FaEnvelope } from 'react-icons/fa'
 import { FiDownload } from 'react-icons/fi'
 import { Tags } from './Tags'
-
+import { CurrentStatus } from './CurrentStatus'
 
 const Hero = () => {
   return (
@@ -17,19 +17,15 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           className="text-4xl font-bold"
         >
-          <p>{"Hi, I'm Peter."}</p>
+          <p>{"hi, i'm Peter."}</p>
           <br />
-          <p className="text-lg">{">2 YOE as SWE. BS in Computer Science."}</p>
-          <p className="text-lg">Learning Everday. Blessed Always.</p>
+          <p className="text-lg">{">2 YOE as SWE. BS in computer science."}</p>
+          <p className="text-lg">learning everday. blessed always.</p>
+          <br />
+          <CurrentStatus />
         </motion.h1>
 
         <Tags />
-
-        {/* <div className="flex gap-4 text-xl text-gray-600">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <FaInstagram />
-          </a>
-        </div> */}
       </div>
 
       <motion.div

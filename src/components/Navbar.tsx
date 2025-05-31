@@ -3,19 +3,40 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
+import { useEffect, useState } from 'react'
 
 const navItems = [
-  { label: 'About', href: '/' },
-  { label: 'Experiences', href: '#experiences' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'about', href: '/' },
+  { label: 'experiences', href: '#experiences' },
+  { label: 'contact', href: '/contact' },
 ]
 
 export default function Navbar() {
   const pathname = usePathname()
+  const [prevScroll, setPrevScroll] = useState(0)
+  const [hidden, setHidden] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const current = window.scrollY;
+      setHidden(current > 200 && current > prevScroll);
+      setPrevScroll(current);
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [prevScroll])
 
   return (
-    <nav className="w-full flex justify-between items-center py-4 px-6 border-b bg-white fixed top-0 z-50 shadow-sm">
-      <div className="text-lg font-bold text-black">I am Peter.</div>
+    <nav
+      className={clsx(
+        'w-full fixed top-0 z-40 shadow-sm transition-all duration-300',
+        'flex justify-between items-center py-4 px-6',
+        'bg-indigo-100/90 backdrop-blur-m',
+        hidden ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'
+      )}
+    >
+      <div className="text-lg font-bold text-black">i am Peter.</div>
       <ul className="flex gap-6">
         {navItems.map(({ label, href }) => (
           <li key={href}>
