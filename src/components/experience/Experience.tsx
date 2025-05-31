@@ -2,8 +2,9 @@
 
 import * as React from "react";
 import { motion, AnimatePresence } from 'framer-motion'
-import { Typewriter } from 'react-simple-typewriter'
 import ExperienceCard from './ExperienceCard'
+import { TechIcons } from "../common/TechIcons";
+import { ExperienceTypeWriter } from "./ExperienceTypeWriter";
 
 const experiences = [
   {
@@ -13,7 +14,19 @@ const experiences = [
     date: '2023 – Present',
     description: 'Built full stack applications using React Typescript, C# .NET, Microsoft SQL Server, Elasticsearch, and more',
     details:
-      'Led development of property intelligence platform, collaborated with data scientists to improve recommendation algorithms by 30%.',
+      'Led backend and frontend development across critical Homes.com initiatives, including an event-driven mediator service and ETL SDK in .NET with AWS SQS, driving 80%+ resource savings and powering $40M+ in feature revenue. Delivered a public scheduling UI in React and a REST API proxy for Elasticsearch adopted by 30+ teams, reducing query latency by 75%.',
+    stack: [
+      { icon: TechIcons.ReactOriginal },
+      { icon: TechIcons.TypescriptPlain },
+      { icon: TechIcons.CsharpOriginal },
+      { icon: TechIcons.MicrosoftsqlserverOriginal },
+      { icon: TechIcons.PythonOriginal },
+      { icon: TechIcons.AmazonwebservicesOriginalWordmark },
+      { icon: TechIcons.ElasticsearchOriginal },
+      { icon: TechIcons.ApachekafkaOriginalWordmark },
+      { icon: TechIcons.OpenapiOriginalWordmark },
+      { icon: TechIcons.SiOpenai, color: "#000" },
+    ]
   },
   {
     id: "experience-2",
@@ -22,7 +35,12 @@ const experiences = [
     date: '2022',
     description: 'Built a POC for AWS Diode to handle automatic file retrieval through cross-domain security regions',
     details:
-      'Designed and deployed semantic engine for enterprise teams, enabling interactive RAG workflows with provenance.',
+      'Built and demonstrated a secure AWS-based POC addressing cross-domain file sourcing, leveraging S3, Lambda, and API Gateway. Modeled infrastructure in Python and TypeScript, authored reusable XML schemas to streamline client onboarding, and solved a critical enterprise security need.',
+    stack: [
+      { icon: TechIcons.TypescriptPlain },
+      { icon: TechIcons.PythonOriginal },
+      { icon: TechIcons.AmazonwebservicesOriginalWordmark },
+    ]
   },
   {
     id: "experience-3",
@@ -31,7 +49,10 @@ const experiences = [
     date: '2022',
     description: 'Investigated tagging methods of sets and algorithms for clustering method explainability',
     details:
-      'Published internal benchmarks on model robustness to spatial perturbations and co-authored PyTorch experiments.',
+      'Researched clustering algorithm explainability and developed tagging strategies for grouped data. Optimized integer linear programs using the Gurobi solver in Python to enhance clustering insights.',
+    stack: [
+      { icon: TechIcons.PythonOriginal },
+    ]
   },
 ]
 
@@ -39,8 +60,8 @@ export default function Experience() {
   const [selected, setSelected] = React.useState<string | null>(null)
   const detailRef = React.useRef<HTMLDivElement>(null)
 
-  const selectedExperience = experiences.find((exp) => exp.id === selected)
-
+  const selectedExperience = experiences.find((exp) => exp.id === selected);
+  
   React.useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -65,7 +86,7 @@ export default function Experience() {
   return (
     <section 
       id="experiences"
-      className="py-20 relative z-10 px-6 sm:px-12 lg:px-24">
+      className="py-20 relative z-20 px-6 sm:px-12 lg:px-24">
       <motion.h2
         className="text-3xl font-bold text-center mb-12"
         initial={{ opacity: 0, y: 30 }}
@@ -129,7 +150,7 @@ export default function Experience() {
             key="expanded-card"
             layoutId={`card-${selectedExperience.id}`}
             ref={detailRef}
-            className="fixed top-24 left-0 right-0 mx-auto w-[90%] md:w-3/4 lg:w-2/3 bg-white rounded-xl shadow-xl p-6 z-50 flex flex-col md:flex-row gap-6"
+            className="fixed top-24 left-0 right-0 mx-auto w-[90%] md:w-3/4 lg:w-2/3 bg-white rounded-xl shadow-xl p-6 flex flex-col md:flex-row gap-6 z-10"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
@@ -140,16 +161,7 @@ export default function Experience() {
               <p className="text-sm text-gray-500">
                 {selectedExperience.company} &bull; {selectedExperience.date}
               </p>
-              <div className="mt-4 text-sm text-gray-700 leading-relaxed">
-                <Typewriter
-                  words={[selectedExperience.details]}
-                  typeSpeed={25}
-                  deleteSpeed={0}
-                  delaySpeed={1000000}
-                  cursor
-                  cursorStyle="_"
-                />
-              </div>
+              <ExperienceTypeWriter details={selectedExperience.details} stack={selectedExperience.stack} />
             </div>
             <button
               onClick={() => setSelected(null)}

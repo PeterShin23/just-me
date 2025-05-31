@@ -80,7 +80,7 @@ export const Tags = () => {
               }}
               whileTap={{ scale: 0.95 }}
               custom={i}
-              className="px-3 py-1 rounded-full text-sm font-medium cursor-default bg-indigo-100 text-indigo-700 transition-colors"
+              className="px-3 py-1 select-none rounded-full text-sm font-medium cursor-default bg-indigo-100 text-indigo-700 transition-colors"
               >
               {tag}
             </motion.span>
