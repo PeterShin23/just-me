@@ -5,8 +5,11 @@ import { motion } from 'framer-motion';
 import { ExperienceTypeWriter } from './ExperienceTypeWriter';
 
 type ExpandedExperienceCardProps = {
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   selectedExperience: any;
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   detailRef: any;
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   setSelected: (exp: any) => void;
 };
 

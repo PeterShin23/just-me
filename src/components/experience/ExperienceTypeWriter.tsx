@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { Typewriter, useTypewriter } from 'react-simple-typewriter'
 import { motion } from 'framer-motion'
 import { IconWrapper } from '../common/TechIcons'
