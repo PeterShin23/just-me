@@ -62,20 +62,31 @@ export default function Experience() {
 
   const selectedExperience = experiences.find((exp) => exp.id === selected);
   
+  const handleCardClick = async (cardId: string) => {
+    if (selected) return; // Don't do anything if clicking the same card
+    
+    setSelected(cardId)
+  }
+
   React.useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (
-        detailRef.current &&
-        !detailRef.current.contains(event.target as Node)
-      ) {
+      const target = event.target as Element
+      
+      // Check if click is outside the detail card
+      if (detailRef.current && !detailRef.current.contains(target)) {
+        // Check if click is on a card (to prevent closing when clicking another card)
+        const isClickOnCard = target.closest('[data-experience-card]')
+        
+        if (isClickOnCard) {
+          return;
+        }
+
         setSelected(null)
       }
     }
 
     if (selected) {
       document.addEventListener('mousedown', handleClickOutside)
-    } else {
-      document.removeEventListener('mousedown', handleClickOutside)
     }
 
     return () => {
@@ -115,29 +126,32 @@ export default function Experience() {
           },
         }}
       >
-        {experiences
-          .map((exp) => (
+        {experiences.map((exp) => (
           <motion.div
             key={exp.id}
-            layout
             layoutId={`card-${exp.id}`}
+            data-experience-card
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0 },
             }}
             animate={{
-              opacity: selected && selected !== exp.id ? 0 : 1,
-              scale: selected && selected !== exp.id ? 0.8 : 1,
-              pointerEvents: selected && selected !== exp.id ? 'none' : 'auto',
+              opacity: selected && selected !== exp.id ? 0.3 : 1,
+              scale: selected && selected !== exp.id ? 0.95 : 1,
+              pointerEvents: selected ? 'none' : 'auto',
             }}
             transition={{
               type: 'spring',
               stiffness: 300,
               damping: 30,
-              duration: 0.5,
+              duration: 0.4,
             }}
-            className="w-full sm:w-[300px] cursor-pointer"
-            onClick={() => setSelected(exp.id)}
+            className="w-full sm:w-[300px] experience-card"
+            onClick={() => handleCardClick(exp.id)}
+            style={{ 
+              visibility: selected === exp.id ? 'hidden' : 'visible',
+              cursor: !selected || selected === exp.id ? 'pointer' : 'default'
+            }}
           >
             <ExperienceCard {...exp} />
           </motion.div>
@@ -150,11 +164,20 @@ export default function Experience() {
             key={`expanded-${selectedExperience.id}`}
             layoutId={`card-${selectedExperience.id}`}
             ref={detailRef}
-            className="fixed top-24 left-0 right-0 mx-auto w-[90%] md:w-3/4 lg:w-2/3 bg-white rounded-xl shadow-xl p-6 flex flex-col md:flex-row gap-6 z-10"
+            className="fixed top-24 left-0 right-0 mx-auto w-[90%] md:w-3/4 lg:w-2/3 bg-white rounded-xl shadow-xl p-6 flex flex-col md:flex-row gap-6 z-50"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ type: 'spring', stiffness: 260, damping: 25 }}
+            exit={{ 
+              opacity: 0,
+              scale: 0.8,
+              transition: { duration: 0.3, ease: 'easeOut' }
+            }}
+            transition={{ 
+              type: 'spring', 
+              stiffness: 400, 
+              damping: 30,
+              duration: 0.4
+            }}
           >
             <div className="flex-1">
               <h3 className="text-xl font-bold text-indigo-600">{selectedExperience.title}</h3>

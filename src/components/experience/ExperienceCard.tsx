@@ -35,7 +35,6 @@ export default function ExperienceCard({
     <Tilt className="flex justify-center w-11/12 sm:w-[300px]">
       <motion.div
         ref={cardRef}
-        // layoutId={`card-${id}`}
         onMouseMove={handleMouseMove}
         className="relative bg-white/90 backdrop-blur-sm group rounded-xl p-5 border border-gray-200 shadow-md hover:shadow-xl transition duration-300 overflow-hidden"
         initial={{ opacity: 0, y: 20 }}
