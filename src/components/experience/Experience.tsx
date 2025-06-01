@@ -4,7 +4,7 @@ import * as React from "react";
 import { motion, AnimatePresence } from 'framer-motion'
 import ExperienceCard from './ExperienceCard'
 import { TechIcons } from "../common/TechIcons";
-import { ExperienceTypeWriter } from "./ExperienceTypeWriter";
+import { MemoizedExpandedExperienceCard } from "./ExpandedExperienceCard";
 
 const experiences = [
   {
@@ -148,9 +148,11 @@ export default function Experience() {
             }}
             className="w-full sm:w-[300px] experience-card"
             onClick={() => handleCardClick(exp.id)}
-            style={{ 
-              visibility: selected === exp.id ? 'hidden' : 'visible',
-              cursor: !selected || selected === exp.id ? 'pointer' : 'default'
+            style={{
+              opacity: !selected || selected === exp.id ? 0.3 : 1,
+              cursor: !selected || selected === exp.id ? 'pointer' : 'default',
+              pointerEvents: selected && selected !== exp.id ? 'none' : 'auto',
+              willChange: 'transform, opacity',
             }}
           >
             <ExperienceCard {...exp} />
@@ -160,39 +162,11 @@ export default function Experience() {
 
       <AnimatePresence mode="wait">
         {selectedExperience && (
-          <motion.div
-            key={`expanded-${selectedExperience.id}`}
-            layoutId={`card-${selectedExperience.id}`}
-            ref={detailRef}
-            className="fixed top-24 left-0 right-0 mx-auto w-[90%] md:w-3/4 lg:w-2/3 bg-white rounded-xl shadow-xl p-6 flex flex-col md:flex-row gap-6 z-50"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ 
-              opacity: 0,
-              scale: 0.8,
-              transition: { duration: 0.3, ease: 'easeOut' }
-            }}
-            transition={{ 
-              type: 'spring', 
-              stiffness: 400, 
-              damping: 30,
-              duration: 0.4
-            }}
-          >
-            <div className="flex-1">
-              <h3 className="text-xl font-bold text-indigo-600">{selectedExperience.title}</h3>
-              <p className="text-sm text-gray-500">
-                {selectedExperience.company} &bull; {selectedExperience.date}
-              </p>
-              <ExperienceTypeWriter details={selectedExperience.details} stack={selectedExperience.stack} />
-            </div>
-            <button
-              onClick={() => setSelected(null)}
-              className="absolute top-4 right-4 text-gray-400 hover:text-black transition text-xl"
-            >
-              &times;
-            </button>
-          </motion.div>
+          <MemoizedExpandedExperienceCard 
+            setSelected={setSelected}
+            detailRef={detailRef}
+            selectedExperience={selectedExperience}
+          />
         )}
       </AnimatePresence>
     </section>
