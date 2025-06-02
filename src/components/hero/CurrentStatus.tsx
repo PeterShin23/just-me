@@ -17,7 +17,7 @@ export const CurrentStatus = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % statuses.length)
-    }, 7000)
+    }, 5500)
     return () => clearInterval(interval)
   }, [])
 
