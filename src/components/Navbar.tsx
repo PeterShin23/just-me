@@ -32,11 +32,11 @@ export default function Navbar() {
       className={clsx(
         'w-full fixed top-0 z-40 shadow-sm transition-all duration-300',
         'flex justify-between items-center py-4 px-6',
-        'bg-indigo-100/90 backdrop-blur-m',
+        'bg-black/60 backdrop-blur-m',
         hidden ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'
       )}
     >
-      <div className="text-lg font-bold text-black">i am Peter.</div>
+      <div className="text-lg font-bold">i am Peter.</div>
       <ul className="flex gap-6">
         {navItems.map(({ label, href, id }) => (
           <li key={href}>
