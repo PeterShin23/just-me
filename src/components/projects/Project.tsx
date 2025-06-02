@@ -9,7 +9,7 @@ const projects = [
     id: 'project-1',
     title: 'Mindria AI - Founder',
     description: 'Retrival Verification Platform for LLM-Driven Applications. Brings verifiability and auditability in LLM workflows in a docker-ready container for private instances. Provides backend API, background jobs, SDK, Dashboard UI.',
-    tags: ['StartUp', 'AI', 'RAG', 'LLM', 'Observability', 'Python', 'NextJS'],
+    tags: ['StartUp', 'AI', 'RAG', 'LangChain', 'Observability', 'Python', 'NextJS'],
     repoUrl: 'https://github.com/mindria-ai',
     customTitleStyle: "animated-gradient"
   },
