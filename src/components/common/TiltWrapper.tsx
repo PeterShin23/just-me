@@ -29,8 +29,8 @@ export default function TiltWrapper({
     max: 10,
     speed: 400,
     scale: 1.03,
-    glare: true,
-    'max-glare': 0.2,
+    glare: false,
+    // 'max-glare': 0.1,
   },
   className = '',
 }: Props) {

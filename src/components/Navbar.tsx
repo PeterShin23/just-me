@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 import { useActiveSection } from '@/hooks/useActiveSection' // ⬅️ add this
 
 const navItems = [
-  { label: 'about.', href: '#about', id: 'about' },
+  { label: 'about.', href: '#me', id: 'me' },
   { label: 'work life.', href: '#experiences', id: 'experiences' },
   { label: 'contact.', href: '#contact', id: 'contact' },
 ]
