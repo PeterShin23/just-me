@@ -7,7 +7,7 @@ const tags = [
   'Amazon Web Services', 
   'CoStar Group', 
   'UVA Alumni', 
-  'Founder', 
+  // 'Founder', 
   'Photographer - kinda sorta', 
   'Korean Immigrant', 
   'Proud Son'

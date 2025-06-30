@@ -5,12 +5,21 @@ import ProjectCard from "./ProjectCard"
 
 // pages or section component
 const projects = [
-  {
+  // {
+  //   id: 'project-1',
+  //   title: 'Mindria AI - Founder',
+  //   description: 'Retrival Verification Platform for LLM-Driven Applications. Brings verifiability and auditability in LLM workflows in a docker-ready container for private instances. Provides backend API, background jobs, SDK, Dashboard UI.',
+  //   tags: ['StartUp', 'AI', 'RAG', 'LangChain', 'Observability', 'Python', 'NextJS'],
+  //   repoUrl: 'https://github.com/mindria-ai',
+  //   customTitleStyle: "animated-gradient"
+  // },
+    {
     id: 'project-1',
-    title: 'Mindria AI - Founder',
-    description: 'Retrival Verification Platform for LLM-Driven Applications. Brings verifiability and auditability in LLM workflows in a docker-ready container for private instances. Provides backend API, background jobs, SDK, Dashboard UI.',
-    tags: ['StartUp', 'AI', 'RAG', 'LangChain', 'Observability', 'Python', 'NextJS'],
-    repoUrl: 'https://github.com/mindria-ai',
+    title: 'CLI AI Assistant',
+    finishedDate: 'June 2025',
+    description: 'An LLM-Powered CLI tool written in Go that takes a screenshot of your computer display and optionally records your mic. Your personal assistant without having to do any more than what you already do.',
+    tags: ['AI', 'Golang', 'OpenAI', 'UseThisEveryday'],
+    repoUrl: 'https://github.com/PeterShin23/MyAssistant',
     customTitleStyle: "animated-gradient"
   },
   {
