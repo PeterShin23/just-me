@@ -13,7 +13,16 @@ const projects = [
   //   repoUrl: 'https://github.com/mindria-ai',
   //   customTitleStyle: "animated-gradient"
   // },
-    {
+  {
+    id: 'project-0',
+    title: 'SeatGeek MCP Server',
+    finishedDate: 'August 2025',
+    description: 'An MCP Server that connects you to the official SeatGeek Public Developer API. Written in Typescript, helps users connect to events in realtime on the SeatGeek platform using tool-enabled LLMs.',
+    tags: ['AI', 'ModelContextProtocol', 'RAG', 'OpenWebUI', 'Typescript'],
+    repoUrl: 'https://github.com/PeterShin23/seatgeek-mcp',
+    customTitleStyle: "animated-gradient"
+  },
+  {
     id: 'project-1',
     title: 'CLI AI Assistant',
     finishedDate: 'June 2025',
