@@ -24,6 +24,14 @@ const projects = [
     customTitleStyle: "animated-gradient"
   },
   {
+    id: 'project-01',
+    title: 'Vector DB Benchmark',
+    finishedDate: 'August 2025 - loading...',
+    description: 'Evaluation of popular vector database options, including Weaviate, Qdrant, pgvector, and more. Benchmarks retrieval speed, insertion speed, and accuracy using common embeddings. Adding more databases soon...',
+    tags: ['RAG', 'VectorDB', 'Evaluation Framework', 'Python'],
+    repoUrl: 'https://github.com/PeterShin23/db-benchmark',
+  },
+  {
     id: 'project-1',
     title: 'CLI AI Assistant',
     finishedDate: 'June 2025',
