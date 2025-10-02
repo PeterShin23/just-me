@@ -35,8 +35,8 @@ const projects = [
     id: 'project-1',
     title: 'CLI AI Assistant',
     finishedDate: 'June 2025',
-    description: 'An LLM-Powered CLI tool written in Go that takes a screenshot of your computer display and optionally records your mic. Your personal assistant without having to do any more than what you already do.',
-    tags: ['AI', 'Golang', 'OpenAI', 'UseThisEveryday'],
+    description: 'An LLM-Powered CLI tool written in Go that acts as your personal assistant. Includes a relay WebSocket server to connect computer and mobile device. Streams responses to terminal and mobile device.',
+    tags: ['AI', 'Golang', 'ReactNative', 'Expo', 'LLM', 'WebSocket'],
     repoUrl: 'https://github.com/PeterShin23/MyAssistant',
     customTitleStyle: "animated-gradient"
   },
